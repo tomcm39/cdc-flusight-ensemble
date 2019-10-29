@@ -5,7 +5,7 @@ library("cdcfluview")
 ## devtools::install_github("cmu-delphi/epiforecast-R", subdir="epiforecast")
 
 ## make equal weights file separately
-# source("make-equal-weights.R")
+source("make-equal-weights.R")
 
 ## set column to use for calculating weights
 SCORE_COL <- quo(`Score`)
@@ -23,8 +23,8 @@ target.types.list = list(
 weighting.scheme.partial.indexer.lists = list(
   "constant" = list(all=NULL, all=NULL),
   "target-type-based" = list(all=NULL, subsets=target.types.list),
-  "target-based" = list(all=NULL, each=NULL),
-  "target-and-region-based" = list(each=NULL, each=NULL)
+  "target-based" = list(all=NULL, each=NULL)#,
+  #"target-and-region-based" = list(each=NULL, each=NULL)
 )
 
 ## Read in & tweak scores.csv
